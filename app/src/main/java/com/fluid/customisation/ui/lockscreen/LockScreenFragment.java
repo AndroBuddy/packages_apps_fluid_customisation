@@ -1,34 +1,18 @@
 package com.fluid.customisation.ui.lockscreen;
 
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.fluid.customisation.R;
 
 public class LockScreenFragment extends Fragment {
-
-    private LockScreenViewModel lockscreenViewModel;
-
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        lockscreenViewModel =
-                ViewModelProviders.of(this).get(LockScreenViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_lockscreen, container, false);
-        final TextView textView = root.findViewById(R.id.text_lockscreen);
-        lockscreenViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_lockscreen, null);
     }
 }
