@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <View
+        	android:id="@+id/action_bar_divider"
+        	android:layout_width="match_parent"
+        	android:layout_height="1dp"
+        	android:background="?android:attr/listDivider"
+        	app:layout_constraintBottom_toTopOf="@id/nav_host_fragment" />   
+
+    	<FrameLayout
+    		android:id="@+id/nav_host_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/nav_view" />
+            
+    	<View
+        	android:id="@+id/nav_view_divider"
+        	android:layout_width="match_parent"
+        	android:layout_height="1dp"
+        	android:background="?android:attr/listDivider"
+        	app:layout_constraintBottom_toTopOf="@id/nav_view" />        
+
+    	<com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/bottom_nav_menu"
+            app:itemBackground="?android:windowBackground"
+            app:itemRippleColor="@color/bottombar_ripple"
+            app:itemIconTint="@drawable/tab_color"
+            app:itemTextColor="@drawable/tab_color"
+            app:elevation="0dp"
+            android:layout_gravity="bottom" />
+
+</RelativeLayout>
